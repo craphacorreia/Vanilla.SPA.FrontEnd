@@ -1,5 +1,6 @@
 var app;
 var header = menu = license = '';
+$(document).ready(runApp);
 
 function runApp() {
     $.get('config.json')
@@ -28,7 +29,7 @@ function configureTheme() {
     app.siteMenu.forEach(item => {
         menu += `
             <a href="${item.href}" title="${item.label}">
-                <i class="${item.icon} fa-fw"></i>
+                <i class="${item.icon}"></i>
                 <span>${item.label}</span>
             </a>
         `;
@@ -38,7 +39,7 @@ function configureTheme() {
         todayYear = '';
     license = `
         &copy; ${app.siteYear} ${todayYear} ${app.siteOwner}
-        <small><a href="policies">Políticas de Privacidade</small>
+        <small><a href="policies">Políticas de Privacidade</a></small>
     `;
     $('#header').html(header);
     $('#menu').html(menu);
@@ -110,5 +111,3 @@ function now() {
     const timeParts = dateParts[1].split('.')[0];
     return dateParts[0] + ' ' + timeParts;
 }
-
-$(document).ready(runApp);

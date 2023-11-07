@@ -128,7 +128,7 @@ main {
     flex-grow: 1;
 }
 
-main div {
+main>div {
     position: relative;
     height: 100%;
     display: flex;
@@ -180,6 +180,12 @@ footer>div>a {
     font-size: 1.5rem;
 }
 
+nav *,
+header *,
+footer * {
+    transition: .15s;
+}
+
 @media (min-width: 768px) {
 
     header>div {
@@ -211,7 +217,7 @@ footer>div>a {
         margin-right: .5rem;
     }
 
-    main div {
+    main>div {
         flex-direction: row;
     }
 
@@ -232,5 +238,24 @@ textarea {
     font-family: inherit;
     font-size: inherit;
     padding: .35rem .5rem;
+    border: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-button {
+    background-color: transparent;
+    height: 15px;
+    color: black;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(94, 173, 237);
     border: none;
 }
